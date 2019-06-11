@@ -9,7 +9,8 @@
     "dev": "crassa dev",
     "lint": "crassa lint",
     "count": "crassa count-lines",
-    "start:dev": "crassa start-dev"
+    "start:dev": "crassa start-dev",
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
@@ -100,6 +101,13 @@
     "redux-saga": "1.0.2",
     "redux-wait-for-action": "0.0.8",
     "rimraf": "2.6.3"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "{src,server}/**/*.js": [
+      "eslint . --ext .js --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "redux-devtools": "3.5.0",
