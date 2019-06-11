@@ -7,6 +7,7 @@ export default async function(req, res, next) {
   await store.dispatch(counterDuck.creators.addCountFromServer())
   // Resave new store
   res.locals.store = store
+
   // Pass middlerware
   next()
 }

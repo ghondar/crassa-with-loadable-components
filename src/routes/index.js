@@ -1,13 +1,12 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
-import loadable from 'loadable-components'
+import loadable from '@loadable/component'
 
 import Loading from 'components/Common/Loading'
 
 const Dashboard = loadable(() => import(/* webpackChunkName: "Dashboard" */ 'containers/Dashboard'), {
-  LoadingComponent: () => <Loading />,
-  modules         : [ 'containers/Dashboard' ]
+  cacheKey: props => 'hola'
 })
 
 export default history => (

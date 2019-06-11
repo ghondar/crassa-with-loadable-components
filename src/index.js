@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { HelmetProvider } from 'react-helmet-async'
-import { loadComponents } from 'loadable-components'
+import { loadableReady } from '@loadable/component'
 // import registerServiceWorker from './registerServiceWorker'
 import App from './App'
 
@@ -20,13 +20,9 @@ const render = (Component, type = 'render') => {
 }
 
 if(process.env.NODE_ENV === 'production')
-  loadComponents()
-    .then(() => {
-      render(App, 'hydrate')
-    })
-    .catch(() => {
-      render(App, 'hydrate')
-    })
+  loadableReady(() => {
+    render(App, 'hydrate')
+  })
 else render(App)
 
 // Webpack Hot Module Replacement API
