@@ -77,7 +77,7 @@
     "history": "4.9.0",
     "http-proxy-middleware": "0.19.1",
     "ignore-styles": "5.0.1",
-    "immer": "3.1.2",
+    "immer": "9.0.6",
     "inquirer": "6.3.1",
     "jsan": "3.1.13",
     "lint-staged": "8.1.7",
